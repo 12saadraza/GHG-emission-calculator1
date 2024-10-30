@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Gas Emissions Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="header">Environmental Engineering Project</h1>
+    <div class="container">
+        <h1>Greenhouse Gas Emissions Calculator</h1>
+        <form id="emissionsForm">
+            <label for="milesDriven">Miles Driven per Week:</label>
+            <input type="number" id="milesDriven" placeholder="Enter miles driven" required>
+
+            <label for="numVehicles">Number of Vehicles:</label>
+            <input type="number" id="numVehicles" placeholder="Enter number of vehicles" required>
+
+            <label for="electricityUsage">Electricity Usage (kWh per month):</label>
+            <input type="number" id="electricityUsage" placeholder="Enter electricity usage" required>
+
+            <label for="naturalGasUsage">Natural Gas Usage (therms per month):</label>
+            <input type="number" id="naturalGasUsage" placeholder="Enter natural gas usage" required>
+
+            <label for="plantFactor">Plant Factor (kg CO2 per kWh):</label>
+            <input type="number" id="plantFactor" step="0.01" placeholder="Enter plant factor" required>
+
+            <label for="wasteWater">Wastewater (gallons per month):</label>
+            <input type="number" id="wasteWater" placeholder="Enter wastewater amount" required>
+
+            <button type="submit">Calculate Emissions</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emissions Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Total Emissions Details</h1>
+        <div id="emissionsResult" class="mt-4 alert alert-info"></div>
+        <button class="btn btn-secondary" onclick="window.close();">Close</button>
+    </div>
+
+    <script>
+        // Get the emissions data from localStorage
+        const emissionsData = JSON.parse(localStorage.getItem('emissionsData'));
+        
+        if (emissionsData) {
+            document.getElementById('emissionsResult').innerText = 
+                `Total Annual Emissions: ${emissionsData.totalEmissions.toFixed(2)} kg CO2\n\n` +
+                `Breakdown:\n` +
+                `Transportation Emissions: ${emissionsData.transportationEmissions.toFixed(2)} kg CO2\n` +
+                `Electricity Emissions: ${emissionsData.electricityEmissions.toFixed(2)} kg CO2\n` +
+                `Natural Gas Emissions: ${emissionsData.naturalGasEmissions.toFixed(2)} kg CO2\n` +
+                `Wastewater Emissions: ${emissionsData.wastewaterEmissions.toFixed(2)} kg CO2`;
+        } else {
+            document.getElementById('emissionsResult').innerText = "No emissions data found.";
+        }
+    </script>
+</body>
+</html>
